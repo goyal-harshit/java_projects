@@ -28,18 +28,17 @@ public class PrimeFinder {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
         // Get the input value from the user
-        System.out.print("Enter the upper limit to find prime numbers: ");
-        int limit = scanner.nextInt();
-
-        // Find all prime numbers up to the given limit
-        List<Integer> primes = findPrimes(limit);
-
-        // Print the prime numbers
-        System.out.println("Prime numbers between 1 and " + limit + " are: " + primes);
-
-        scanner.close();
+        try (Scanner scanner = new Scanner(System.in)) {
+            // Get the input value from the user
+            System.out.print("Enter the upper limit to find prime numbers: ");
+            int limit = scanner.nextInt();
+            
+            // Find all prime numbers up to the given limit
+            List<Integer> primes = findPrimes(limit);
+            
+            // Print the prime numbers
+            System.out.println("Prime numbers between 1 and " + limit + " are: " + primes);
+        }
     }
 }
